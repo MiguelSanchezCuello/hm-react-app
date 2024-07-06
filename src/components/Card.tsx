@@ -1,8 +1,11 @@
+import { ReactNode } from "react";
+
 interface Props {
-  body: string;
+  children: ReactNode;
 }
+
 function Card(props: Props) {
-  const { body } = props;
+  const { children } = props;
   return (
     <div
       className="card"
@@ -10,10 +13,11 @@ function Card(props: Props) {
         width: "350px",
       }}
     >
-      <div className="card-body">{body}</div>
+      <div className="card-body">{children}</div>
     </div>
   );
 }
+
 interface CardBodyProps {
   title: string;
   text?: string;
