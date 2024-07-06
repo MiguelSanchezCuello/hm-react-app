@@ -9,6 +9,8 @@ function App() {
   };
   return (
     <Card>
+      {/* {list.length !== 0 && "mi lista"}  ejemplo de como funciona un valor falsy */}
+      {"string" && "string vacio"}
       <CardBody title="Hola Mundo" text="Este es el texto" />
       <List data={list} onSelect={handleSelect} />
     </Card>
