@@ -3,10 +3,14 @@ import List from "./components/List";
 
 function App() {
   const list = ["Goku", "Tanjiro", "Miguel"];
+
+  const handleSelect = (elemento: string) => {
+    console.log("imprimiendo :" + elemento);
+  };
   return (
     <Card>
       <CardBody title="Hola Mundo" text="Este es el texto" />
-      <List data={list} />
+      <List data={list} onSelect={handleSelect} />
     </Card>
   );
 }
