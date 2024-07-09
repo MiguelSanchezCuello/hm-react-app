@@ -2,9 +2,13 @@ import { ReactNode } from "react";
 // import styles from "./Button.module.css";
 import styled from "styled-components";
 
-const Btn = styled.button`
+type BtnProps = {
+  isLoading: boolean;
+};
+
+const Btn = styled.button<BtnProps>`
   padding: 25px 30px;
-  background-color: red;
+  background-color: ${(props) => (props.isLoading ? "gray" : "red")};
 `;
 
 type Props = {
@@ -15,14 +19,12 @@ type Props = {
 
 // Codigo usando CSS en JS
 function Button({ children, isLoading, onClick }: Props) {
-  return ( 
-  <Btn onClick={onClick} disabled={isLoading} type="button">
-    {isLoading ? "Cargando" : children}
-  </Btn> 
+  return (
+    <Btn onClick={onClick} disabled={isLoading} isLoading={isLoading}>
+      {isLoading ? "Cargando" : children}
+    </Btn>
   );
 }
-
-
 
 // Codigo con modules
 // console.log(styles);

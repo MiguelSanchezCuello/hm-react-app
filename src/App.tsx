@@ -34,8 +34,8 @@ function App() {
   const delMinion = () => setData(data.slice(0, -1));
   return (
     <Card>
-      <Button onClick={addMinion}>Agregar</Button>
-      <Button onClick={delMinion}>Eliminar</Button>
+      <Button isLoading={true} onClick={addMinion}>Agregar</Button>
+      <Button isLoading={false} onClick={delMinion}>Eliminar</Button>
       <List data={data}></List>
     </Card>
   );
