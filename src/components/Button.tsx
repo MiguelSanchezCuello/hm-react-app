@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  isLoading: boolean;
+  isLoading?: boolean; // el signo de interrogacion le dice que la propiedad es opcional.
   onClick: () => void;
 };
 
@@ -12,10 +12,9 @@ function Button({ children, isLoading, onClick }: Props) {
       disabled={isLoading}
       onClick={onClick}
       type="button"
-      className={`btn btn-${isLoading ? 'secondary' : 'primary'}`}
-
+      className={`btn btn-${isLoading ? "secondary" : "primary"}`}
     >
-      {isLoading ? 'Cargando' : children}
+      {isLoading ? "Cargando" : children}
     </button>
   );
 }
